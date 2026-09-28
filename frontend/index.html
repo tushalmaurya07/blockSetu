@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BlockSetu — XGBoost + SHAP + CP-SAT</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="layout">
+<aside>
+  <div class="brand"><b>BS</b><div><strong>BlockSetu</strong><small>One Plan for Every Block</small></div></div>
+  <div class="sih">SMART INDIA HACKATHON 2026<br><span>SIH26027 · AI Block Planning</span></div>
+  <nav>
+    <button class="nav active" data-view="dashboard">◈ Dashboard</button>
+    <button class="nav" data-view="demands">▣ Block Demands</button>
+    <button class="nav" data-view="planner">✦ AI + CP-SAT Planner</button>
+    <button class="nav" data-view="blocks">◫ Joint Blocks</button>
+    <button class="nav" data-view="traffic">⌁ Traffic Windows</button>
+    <button class="nav" data-view="history">◷ Execution History</button>
+  </nav>
+  <div class="stack">
+    <b>AI STACK</b>
+    <span>✓ XGBoost</span><span>✓ SHAP</span><span id="ortools-status">… OR-Tools CP-SAT</span>
+  </div>
+</aside>
+<main>
+<header><div><small>BLOCKSETU OPERATIONS</small><h1 id="title">Operations Dashboard</h1></div><div id="health" class="health">Connecting…</div></header>
+
+<section id="dashboard" class="view active">
+  <div class="hero"><div><small>MAXIMUM ASSET AVAILABILITY · MINIMUM TRAIN DELAY</small><h2>AI-powered automatic block planning</h2><p>Risk scoring with XGBoost, explainable decisions with SHAP, and joint block scheduling with OR-Tools CP-SAT.</p><button class="primary" data-go="planner">Open AI Planner →</button></div><div class="train">🚆</div></div>
+  <div id="kpis" class="cards"></div>
+  <div class="two"><div class="panel"><h3>Priority Distribution</h3><p>600 maintenance demands</p><div id="priority"></div></div><div class="panel"><h3>Approval Status</h3><p>120 joint blocks</p><div id="approval"></div></div></div>
+</section>
+
+<section id="demands" class="view">
+  <div class="head"><div><h2>Unified Block Demand Hub</h2><p>Complete dataset from TMS · SMMS · TDMS.</p></div><input id="search" placeholder="Search demand / section / work"></div>
+  <div class="panel"><div id="demands-table"></div></div>
+</section>
+
+<section id="planner" class="view">
+  <div class="head"><div><h2>AI + Optimisation Planner</h2><p>Pipeline: XGBoost → SHAP → CP-SAT.</p></div></div>
+  <div class="planner"><div class="panel">
+    <label>Select demand<select id="demand"></select></label>
+    <button id="predict" class="secondary">1. Run XGBoost + SHAP</button>
+    <button id="optimize" class="primary full">2. Run OR-Tools CP-SAT</button>
+    <div class="note"><b>Safety architecture</b><br>AI scores risk/priority. CP-SAT handles hard scheduling constraints. Final operational approval remains with the officer.</div>
+  </div><div class="panel" id="result"><div class="empty">Select a demand and run the model.</div></div></div>
+</section>
+
+<section id="blocks" class="view"><div class="head"><div><h2>Joint Possession Blocks</h2><p>Complete 120 optimised records.</p></div></div><div class="panel"><div id="blocks-table"></div></div></section>
+<section id="traffic" class="view"><div class="head"><div><h2>Traffic-Aware Windows</h2><p>Complete 300 COA traffic records.</p></div></div><div class="panel"><div id="traffic-table"></div></div></section>
+<section id="history" class="view"><div class="head"><div><h2>Execution History</h2><p>Complete 350 historical records.</p></div></div><div class="panel"><div id="history-table"></div></div></section>
+</main></div>
+<div id="toast"></div>
+<script src="/app.js"></script>
+</body></html>

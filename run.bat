@@ -1,0 +1,6 @@
+@echo off
+echo Installing Python dependencies...
+python -m pip install -r requirements.txt
+echo.
+echo Starting BlockSetu...
+python -m uvicorn main:app --reload --host 127.0.0.1 --port 8000

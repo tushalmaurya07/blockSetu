@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+pandas
+numpy
+xgboost
+shap
+scikit-learn
+ortools
